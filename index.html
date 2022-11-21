@@ -5,9 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Rock, Paper, Scissors, Lizard, Spock</title>
+    <title>Rock-Paper-Scissors-Lizard-Spock</title>
 </head>
+
 <body>
+    <header>
+        <h1>Rock-Paper-Scissors-Lizard-Spock Game</h1>
+    </header>
+    <main>
+        <div id="name-rules">
+            <div id="name">
+                <h2 aria-label="rock, paper, scissors, lizard, spock, game"><i
+                        class="fa-regular fa-hand-back-fist"></i>-<i class="fa-regular fa-hand"></i>-<i
+                        class="fa-regular fa-hand-scissors"></i>-<i class="fa-regular fa-hand-lizard"></i>-<i
+                        class="fa-regular fa-hand-spock"></i>
+                </h2>
+                <img src="/assets/images/game-image.webp" alt="">
+            </div>
+            <div id="rules">
+                <h2>Game Rules</h2><img src="/assets/images/game-rules.webp" alt="">
+            </div>
+        </div>
+        <h2>Make Your Choice</h2>
+        <div id="btn-options">
+            <button id="rock" class="btn">Rock <i class="fa-regular fa-hand-back-fist"></i></button>
+            <button id="paper" class="btn">Paper <i class="fa-regular fa-hand"></i></button>
+            <button id="scissors" class="btn">Scissors <i class="fa-regular fa-hand-scissors"></i></button>
+            <button id="lizard" class="btn">Lizard <i class="fa-regular fa-hand-lizard"></i></button>
+            <button id="spock" class="btn">Spock <i class="fa-regular fa-hand-spock"></i></button>
+        </div>
+        <div id="game-area">
+            <div id="user">
+                <p>Your Score: <span id="user-score">0</span></p>
+                <div>
+                    <img src="/assets/images/rpsls.png" alt="Rock-Paper-Scissors-Lizard-Spock">
+                </div>
+            </div>
+            <div id="computer">
+                <p>Computer Score: <span id="computer-score">0</span></p>
+                <div>
+                    <img src="/assets/images/rpsls.png" alt="Rock-Paper-Scissors-Lizard-Spock">
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <h3>Restart Game</h3>
+    </footer>
     
     <script src="assets/js/script.js"></script>
 </body>
