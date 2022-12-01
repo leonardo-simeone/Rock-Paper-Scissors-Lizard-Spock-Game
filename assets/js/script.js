@@ -111,3 +111,53 @@ function getComputerAnswer() {
     }
     console.log(computerChoice);    
 }
+
+/**
+ * This function kicks in once the user has selected one of the options,
+ * it runs the getComputerAnswer() function first to determine the computer's choice
+ * then it compares the user's and computer's choices and assigns a winner based on the rules
+ * it also updates the scores and prints a message on the screen indicating the result
+ */
+function runGame() {
+
+    getComputerAnswer();
+
+    let userScore = parseInt(document.getElementById("user-score").innerText);
+    let computerScore = parseInt(document.getElementById("computer-score").innerText);
+
+    if (userChoice === computerChoice) {
+        console.log("The game is a tie!");
+        document.getElementById("message").innerText = "The game is a tie!";
+
+    } else if (userChoice === "rock" && (computerChoice === "scissors" || computerChoice === "lizard")) {
+        document.getElementById("user-score").innerText = ++userScore;
+        console.log("You win!");
+        document.getElementById("message").innerText = "Congratulations! You win!";
+
+    } else if (userChoice === "paper" && (computerChoice === "rock" || computerChoice === "spock")) {
+        document.getElementById("user-score").innerText = ++userScore;
+        console.log("You win!");
+        document.getElementById("message").innerText = "Congratulations! You win!";
+
+    } else if (userChoice === "scissors" && (computerChoice === "paper" || computerChoice === "lizard")) {
+        document.getElementById("user-score").innerText = ++userScore;
+        console.log("You win!");
+        document.getElementById("message").innerText = "Congratulations! You win!";
+
+    } else if (userChoice === "lizard" && (computerChoice === "paper" || computerChoice === "spock")) {
+        document.getElementById("user-score").innerText = ++userScore;
+        console.log("You win!");
+        document.getElementById("message").innerText = "Congratulations! You win!";
+
+    } else if (userChoice === "spock" && (computerChoice === "rock" || computerChoice === "scissors")) {
+        document.getElementById("user-score").innerText = ++userScore;
+        console.log("You win!");
+        document.getElementById("message").innerText = "Congratulations! You win!";
+
+    } else {
+        document.getElementById("computer-score").innerText = ++computerScore;
+        console.log("Sorry, computer wins!");
+        document.getElementById("message").innerText = "Computer wins! Better luck next time.";
+    }   
+    
+}
