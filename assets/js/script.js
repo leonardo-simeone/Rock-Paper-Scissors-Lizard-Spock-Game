@@ -161,3 +161,35 @@ function runGame() {
     }   
     
 }
+
+/** it shows the game rules via a modal by clicking on the "game rules" button */
+function getModal() {
+
+    let modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    let btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    let span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal 
+    btn.addEventListener("click", modalClicked);
+    function modalClicked() {
+        modal.style.display = "block";
+    };
+
+    // When the user clicks on <span> (x), close the modal
+    span.addEventListener("click", spanClicked);
+    function spanClicked() {
+        modal.style.display = "none";
+    };
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.addEventListener("click", windowClicked);
+    function windowClicked(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
+}
