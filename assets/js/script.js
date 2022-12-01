@@ -61,3 +61,53 @@ function btnClicked(e) {
     console.log(userChoice);
     runGame();    
 }
+
+/**
+ * Generates a number between 0 and 4 and assigns it to the correspondent option
+ * 0 = rock, 1 = paper, 2 = scissors, 3 = lizard and 4 = spock
+ */
+function getComputerAnswer() {
+    computerChoice = Math.floor(Math.random() * 5);
+
+    if (computerChoice === 0) {
+        
+        computerChoice = "rock";
+        document.getElementById("computer-image").src = "assets/images/rock.png";
+        document.getElementById("computer-image").alt = "rock image";
+        document.getElementById('computer-image').setAttribute('aria-label', 'computer selected rock');
+        
+
+    } else if (computerChoice === 1) {
+
+        computerChoice = "paper";
+        document.getElementById("computer-image").src = "assets/images/paper.png";
+        document.getElementById("computer-image").alt = "paper image";
+        document.getElementById('computer-image').setAttribute('aria-label', 'computer selected paper');
+        
+
+    } else if (computerChoice === 2) {
+
+        computerChoice = "scissors";
+        document.getElementById("computer-image").src = "assets/images/scissors.png";
+        document.getElementById("computer-image").alt = "scissors image";
+        document.getElementById('computer-image').setAttribute('aria-label', 'computer selected scissors');
+        
+
+    } else if (computerChoice === 3) {
+
+        computerChoice = "lizard";
+        document.getElementById("computer-image").src = "assets/images/lizard.png";
+        document.getElementById("computer-image").alt = "lizard image";
+        document.getElementById('computer-image').setAttribute('aria-label', 'computer selected lizard');
+        
+
+    } else {
+
+        computerChoice = "spock";
+        document.getElementById("computer-image").src = "assets/images/spock.png";
+        document.getElementById("computer-image").alt = "spock image";
+        document.getElementById('computer-image').setAttribute('aria-label', 'computer selected spock');
+        
+    }
+    console.log(computerChoice);    
+}
