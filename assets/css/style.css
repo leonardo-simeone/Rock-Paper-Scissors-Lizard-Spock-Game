@@ -123,3 +123,16 @@ main > h2 {
     padding: 15px;
     border-radius: 15px;
 }
+
+footer h3 {
+    background: #F9F871;
+    border-radius: 10px;
+    width: 35%;
+    margin: 1% auto;
+    border: 1px solid #00001D;
+}
+
+footer h3:hover {
+    background: #D16E5E;
+}
+
