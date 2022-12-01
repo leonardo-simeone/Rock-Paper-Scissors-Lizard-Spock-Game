@@ -193,3 +193,13 @@ function getModal() {
         }
     };
 }
+
+/**
+ * indicates the user to select their choice from one of the options above,
+ * it lets the user know via an "alert" that the game area images are not interactive
+ */
+function imgClicked() { 
+
+    alert ("Please select one of the options above!");
+}
+
