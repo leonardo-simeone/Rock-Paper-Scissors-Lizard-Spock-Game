@@ -46,3 +46,80 @@ main > h2 {
 #game-rules {
     text-align: center;    
 }
+
+#game-rules button {
+    text-decoration: none;    
+    background: #F9F871; /* Generic Gradient */
+    border-radius: 10px;    
+    margin: 1% auto 0;
+    border: 1px solid #00001D;   
+}
+
+#game-rules button:hover {
+    background: #D16E5E; /* Generic Gradient */
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+#game-area {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;    
+    align-items: center;
+}
+
+#btn-options {
+    margin-top: 1%;
+    text-align: center;
+}
+
+.btn {
+    padding: 5px;
+    margin-left: 15px;
+    margin-right: 15px;
+    background: #F1F1E6; /* Switch Palette */
+    border-radius: 5px;
+    font-size: 110%;
+    border: 2px solid #00001D;
+}
+
+.btn:hover, .btn:active {
+    background: #F9F871;
+}
+
+#message {
+    text-align: center;
+    text-align: center;    
+    background: #F1F1E6;
+    width: 35%;
+    margin: 2% auto 1%;
+    border-radius: 5px;
+    font-size: 120%;
+}
+
+#game-area {
+    text-align: center;    
+}
+
+#user p {
+    border: 2px solid #158582; /* Neighbor Palette */
+    border-radius: 5px;
+    width: 50%;
+    margin: 2% auto;
+}
+
+#computer p {
+    border: 1px solid #D16E5E;
+    border-radius: 5px;
+    width: 50%;
+    margin: 2% auto;
+}
+
+#game-area img {
+    background: #F1F1E6;
+    padding: 15px;
+    border-radius: 15px;
+}
