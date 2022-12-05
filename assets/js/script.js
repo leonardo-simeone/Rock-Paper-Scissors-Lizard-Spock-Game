@@ -25,8 +25,10 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function btnClicked(e) {
-    let btn = e.target;
-    if (btn === document.getElementById("rock")) {        
+    let btn = e.target;    
+    if(btn.nodeName === "I") {
+        btn = btn.parentElement;
+    }
 
         userChoice = "rock";
         document.getElementById("user-image").src = "assets/images/rock.png";
