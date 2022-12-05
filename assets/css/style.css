@@ -191,3 +191,7 @@ footer h3:hover {
   #modal-rules h4 {
     font-size: small;    
   }
+
+  .btn-disabled {
+    pointer-events: none;
+  }
