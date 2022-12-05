@@ -150,7 +150,7 @@ function runGame() {
         console.log("Sorry, computer wins!");
         document.getElementById("message").innerText = "Computer wins! Better luck next time.";
     }   
-    
+    endGame();
 }
 
 /** it shows the game rules via a modal by clicking on the "game rules" button */
