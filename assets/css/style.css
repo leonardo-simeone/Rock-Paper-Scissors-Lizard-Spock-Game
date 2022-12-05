@@ -111,15 +111,22 @@ main > h2 {
     margin: 2% auto;
 }
 
+#user img {
+    background: rgba(21, 133, 130, 0.4);
+}
+
 #computer p {
-    border: 1px solid #D16E5E;
+    border: 2px solid #D16E5E;
     border-radius: 5px;
     width: 50%;
     margin: 2% auto;
 }
 
-#game-area img {
-    background: #F1F1E6;
+#computer img {
+    background: rgba(209, 110, 94, 0.4);
+}
+
+#game-area img {    
     padding: 15px;
     border-radius: 15px;
 }
