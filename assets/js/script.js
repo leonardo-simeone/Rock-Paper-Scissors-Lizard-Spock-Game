@@ -224,3 +224,16 @@ function enableBtns() {
         button.classList.remove("btn-disabled");
     });
 }
+
+function resetGame() {
+    enableBtns();
+    document.getElementById("user-image").src = "assets/images/rpsls.png";
+    document.getElementById("user-image").alt = "Rock-Paper-Scissors-Lizard-Spock";
+    document.getElementById("computer-image").src = "assets/images/rpsls.png";
+    document.getElementById("computer-image").alt = "Rock-Paper-Scissors-Lizard-Spock";
+
+    document.getElementById("user-score").innerText = 0;
+    document.getElementById("computer-score").innerText = 0;
+
+    document.getElementById("message").innerText = "";
+}
