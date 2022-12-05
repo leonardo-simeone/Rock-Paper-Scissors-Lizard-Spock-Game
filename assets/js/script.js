@@ -19,6 +19,10 @@ document.addEventListener("DOMContentLoaded", function () {
     for (let image of images) {
         image.addEventListener("click", imgClicked);
     }
+
+    let reset = document.getElementsByTagName("h3")[0];
+    reset.addEventListener("click", resetGame);
+
 });
 
 function btnClicked(e) {
