@@ -71,46 +71,35 @@ function btnClicked(e) {
 function getComputerAnswer() {
     computerChoice = Math.floor(Math.random() * 5);
 
-    if (computerChoice === 0) {
+    switch (computerChoice) {
+        case 0:
+            computerChoice = "rock";
+            break;
         
-        computerChoice = "rock";
-        document.getElementById("computer-image").src = "assets/images/rock.png";
-        document.getElementById("computer-image").alt = "rock image";
-        document.getElementById('computer-image').setAttribute('aria-label', 'computer selected rock');
+        case 1:
+            computerChoice = "paper";
+            break;
         
+        case 2:
+            computerChoice = "scissors";
+            break;
+                
+        case 3:
+            computerChoice = "lizard";
+            break;
+    
+        case 4:
+            computerChoice = "spock";
+            break;
 
-    } else if (computerChoice === 1) {
-
-        computerChoice = "paper";
-        document.getElementById("computer-image").src = "assets/images/paper.png";
-        document.getElementById("computer-image").alt = "paper image";
-        document.getElementById('computer-image').setAttribute('aria-label', 'computer selected paper');
-        
-
-    } else if (computerChoice === 2) {
-
-        computerChoice = "scissors";
-        document.getElementById("computer-image").src = "assets/images/scissors.png";
-        document.getElementById("computer-image").alt = "scissors image";
-        document.getElementById('computer-image').setAttribute('aria-label', 'computer selected scissors');
-        
-
-    } else if (computerChoice === 3) {
-
-        computerChoice = "lizard";
-        document.getElementById("computer-image").src = "assets/images/lizard.png";
-        document.getElementById("computer-image").alt = "lizard image";
-        document.getElementById('computer-image').setAttribute('aria-label', 'computer selected lizard');
-        
-
-    } else {
-
-        computerChoice = "spock";
-        document.getElementById("computer-image").src = "assets/images/spock.png";
-        document.getElementById("computer-image").alt = "spock image";
-        document.getElementById('computer-image').setAttribute('aria-label', 'computer selected spock');
-        
+        default:
+            console.log("invalid choice");
     }
+
+    document.getElementById("computer-image").src = `assets/images/${computerChoice}.png`;
+    document.getElementById("computer-image").alt = `${computerChoice} image`;
+    document.getElementById('computer-image').setAttribute('aria-label', `computer selected ${computerChoice}`);
+
     console.log(computerChoice);    
 }
 
