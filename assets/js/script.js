@@ -237,3 +237,53 @@ function resetGame() {
 
     document.getElementById("message").innerText = "";
 }
+
+
+function finalScoreWinModal() {    
+
+    let finalModal = document.getElementById("final-score-win-modal");
+
+    finalModal.style.display = "block";
+
+    // Get the <span> element that closes the modal
+    let btnClose = document.getElementById("final-score-win-close");        
+
+    // When the user clicks on <span> (x), close the modal
+    btnClose.addEventListener("click", modalClosed);
+    function modalClosed() {
+        finalModal.style.display = "none";
+    };
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.addEventListener("click", windowClicked);
+    function windowClicked(event) {
+        if (event.target == finalModal) {
+            finalModal.style.display = "none";
+        }
+    };
+}
+
+
+function finalScoreLoseModal() {    
+
+    let finalModal = document.getElementById("final-score-lose-modal");
+
+    finalModal.style.display = "block";
+
+    // Get the <span> element that closes the modal
+    let btnClose = document.getElementById("final-score-lose-close");        
+
+    // When the user clicks on <span> (x), close the modal
+    btnClose.addEventListener("click", modalClosed);
+    function modalClosed() {
+        finalModal.style.display = "none";
+    };
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.addEventListener("click", windowClicked);
+    function windowClicked(event) {
+        if (event.target == finalModal) {
+            finalModal.style.display = "none";
+        }
+    };
+}
