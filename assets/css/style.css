@@ -227,3 +227,12 @@ footer h3:hover {
     text-decoration: none;
     cursor: pointer;
   }
+
+  .sheldon-container {
+    text-align: center;    
+  }
+
+  .sheldon-image {
+    max-width: 50%;
+    border-radius: 15px;
+  }
