@@ -174,15 +174,15 @@ footer h3:hover {
   }
   
   /* The Close Button */
-  .close {
+  #btn-close {
     color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
   }
   
-  .close:hover,
-  .close:focus {
+  #btn-close:hover,
+  #btn-close:focus {
     color: #00001D;
     text-decoration: none;
     cursor: pointer;
