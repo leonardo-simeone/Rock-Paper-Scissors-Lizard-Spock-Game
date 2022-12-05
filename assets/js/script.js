@@ -30,42 +30,38 @@ function btnClicked(e) {
         btn = btn.parentElement;
     }
 
-        userChoice = "rock";
-        document.getElementById("user-image").src = "assets/images/rock.png";
-        document.getElementById("user-image").alt = "rock image";
-        document.getElementById('user-image').setAttribute('aria-label', 'user selected rock');
-
-    } else if (btn === document.getElementById("paper")) {
-
-        userChoice = "paper";
-        document.getElementById("user-image").src = "assets/images/paper.png";
-        document.getElementById("user-image").alt = "paper image";
-        document.getElementById('user-image').setAttribute('aria-label', 'user selected paper');
+    switch (btn) {
+        case document.getElementById("rock"):
+            userChoice = "rock";
+            break;
         
-    } else if (btn === document.getElementById("scissors")) {
-
-        userChoice = "scissors";
-        document.getElementById("user-image").src = "assets/images/scissors.png";
-        document.getElementById("user-image").alt = "scissors image";
-        document.getElementById('user-image').setAttribute('aria-label', 'user selected scissors');
+        case document.getElementById("paper"):
+            userChoice = "paper";
+            break;
         
-    } else if (btn === document.getElementById("lizard")) {
+        case document.getElementById("scissors"):
+            userChoice = "scissors";
+            break;
+                
+        case document.getElementById("lizard"):
+            userChoice = "lizard";
+            break;
+    
+        case document.getElementById("spock"):
+            userChoice = "spock";
+            break;
 
-        userChoice = "lizard";
-        document.getElementById("user-image").src = "assets/images/lizard.png";
-        document.getElementById("user-image").alt = "lizard image";
-        document.getElementById('user-image').setAttribute('aria-label', 'user selected lizard');
-        
-    } else {
+        default:
+            console.log("invalid choice");
+    }
 
-        userChoice = "spock";
-        document.getElementById("user-image").src = "assets/images/spock.png";
-        document.getElementById("user-image").alt = "spock image";
-        document.getElementById('user-image').setAttribute('aria-label', 'user selected spock');
-        
-    }    
+    document.getElementById("user-image").src = `assets/images/${userChoice}.png`;
+    document.getElementById("user-image").alt = `${userChoice} image`;
+    document.getElementById('user-image').setAttribute('aria-label', `user selected ${userChoice}`);
+    
     console.log(userChoice);
-    runGame();    
+    runGame();
+        
 }
 
 /**
