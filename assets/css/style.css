@@ -195,3 +195,35 @@ footer h3:hover {
   .btn-disabled {
     pointer-events: none;
   }
+
+  #final-score-message h4 {
+    font-size: small;    
+  }
+
+  #final-score-win-close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  #final-score-win-close:hover,
+  #final-score-win-close:focus {
+    color: #00001D;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  #final-score-lose-close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  #final-score-lose-close:hover,
+  #final-score-lose-close:focus {
+    color: #00001D;
+    text-decoration: none;
+    cursor: pointer;
+  }
