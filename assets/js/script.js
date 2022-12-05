@@ -194,3 +194,21 @@ function imgClicked() {
     alert ("Please select one of the options above!");
 }
 
+function endGame() {
+    let finalUserScore = parseInt(document.getElementById("user-score").innerText);
+    let finalComputerScore = parseInt(document.getElementById("computer-score").innerText);
+
+    if(finalUserScore === 10 && finalComputerScore < 10) {
+        document.getElementById("message").innerText = "Well Done! You Have Won this round!";
+        disableBtns();
+        finalScoreWinModal();        
+        
+    } else if (finalComputerScore === 10 && finalUserScore < 10) {
+        document.getElementById("message").innerText = "Computer won this round";        
+        disableBtns();
+        finalScoreLoseModal();        
+        
+    } else {
+        console.log("continue playing");
+    }
+}
