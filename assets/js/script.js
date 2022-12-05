@@ -10,12 +10,11 @@ let buttons = document.querySelectorAll(".btn");
  */
 document.addEventListener("DOMContentLoaded", function () {
     getModal();
-    let buttons = document.getElementsByClassName("btn");
-    for (let button of buttons) {
+    buttons.forEach(button => { 
         button.addEventListener("click", btnClicked);
-    }
+    });
 
-    let images = document.getElementsByClassName("images");
+    let images = document.querySelectorAll(".images");
     for (let image of images) {
         image.addEventListener("click", imgClicked);
     }
