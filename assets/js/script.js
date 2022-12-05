@@ -212,3 +212,15 @@ function endGame() {
         console.log("continue playing");
     }
 }
+
+function disableBtns() {
+    buttons.forEach(button => {
+        button.classList.add("btn-disabled");
+    });
+}
+
+function enableBtns() {
+    buttons.forEach(button => {
+        button.classList.remove("btn-disabled");
+    });
+}
