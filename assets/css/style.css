@@ -321,3 +321,48 @@ footer h3:hover {
 
   }
 
+  /* media queries for tablets and mobile devices screens */
+
+  @media screen and (max-width:768px) {    
+
+    header h1 {
+      font-size: 1rem;
+      line-height: 25px;      
+      height: auto;     
+    }
+
+    #game-rules h2 {      
+      line-height: 25px;
+      width: auto;
+    }
+
+    .btn {
+      margin-right: 1px;
+      margin-left: 1px;
+      font-size: 0.8em;
+      text-transform: uppercase;
+    }
+
+    #user p {
+      width: 75%;     
+      font-size: .8rem;
+    }
+
+    #computer p {      
+      width: 75%;     
+      font-size: .8rem;
+    }    
+
+    #game-area img {
+      width: 70%;
+    }
+
+    footer h3 {
+      font-size: 0.9rem;   
+    }
+
+    #message {
+      font-size: .9em;      
+    } 
+
+  }
