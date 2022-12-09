@@ -16,75 +16,88 @@
         <h1>Rock Paper Scissors Lizard Spock Game</h1>
     </header>
     <main>
+        <section id="rules">
+            <div id="game-rules">
                 <button class="pointer" id="btn-rules"><strong>Game Rules</strong></button>
-                    <h4><i class="fa-regular fa-hand-scissors"></i> Scissors <em><u>cuts</u></em> paper <i class="fa-regular fa-hand"></i></h4>
-                    <h4><i class="fa-regular fa-hand"></i> Paper <em><u>covers</u></em> rock<i class="fa-regular fa-hand-back-fist"></i></h4>
-                    <h4><i class="fa-regular fa-hand-back-fist"></i> rock <em><u>crushes</u></em> lizard <i class="fa-regular fa-hand-lizard"></i></h4>
-                    <h4><i class="fa-regular fa-hand-lizard"></i> lizard <em><u>poisons</u></em> spock <i class="fa-regular fa-hand-spock"></i></h4>
-                    <h4><i class="fa-regular fa-hand-spock"></i> spock <em><u>smashes</u></em> scissors <i class="fa-regular fa-hand-scissors"></i></h4>
-                    <h4><i class="fa-regular fa-hand-scissors"> </i>scissors <em><u>decapitates</u></em> lizard <i class="fa-regular fa-hand-lizard"></i></h4>
-                    <h4><i class="fa-regular fa-hand-lizard"></i> lizard <em><u>eats</u></em> paper <i class="fa-regular fa-hand"></i></h4>
-                    <h4><i class="fa-regular fa-hand"></i> paper <em><u>disproves</u></em> spock <i class="fa-regular fa-hand-spock"></i></h4>
-                    <h4><i class="fa-regular fa-hand-spock"></i> spock <em><u>vaporizes</u></em> rock <i class="fa-regular fa-hand-back-fist"></i></h4>
-                    <h4><i class="fa-regular fa-hand-back-fist"></i> rock <em><u>crushes</u></em> scissors <i class="fa-regular fa-hand-scissors"></i></h4>
-                    <p>The first one to score 10 wins. Good Luck! <i class="fa-solid fa-thumbs-up"></i></p>
-                    <p>Game Developed by Leonardo Simeone <a target="_blank" href="https://github.com/leonardo-simeone/Rock-Paper-Scissors-Lizard-Spock-Game" aria-label="link to GitHub repository">GitHub</a></p>
-                </div>                
             </div>
-        </div>
-        <div id="final-score-win-modal" class="modal">
-            <!-- final score win modal content -->
-            <div class="modal-content">
-              <span id="final-score-win-close">x</span>
-              <div id="final-score-message">
-                    <div class="sheldon-container">
-                        <img class="sheldon-image" src="assets/images/happy-sheldon.png" alt="happy sheldon">
-                    </div>
-                    <h4>Congratulations, you have won this round! Well Done!</h4>
-                    <h4>You're welcome to try another round</h4>                    
-                    <p>To start a new game please press <em><strong>restart game</strong></em> on the main console</p>
-                </div>                
-            </div>
-        </div>
-        <div id="final-score-lose-modal" class="modal">
-            <!-- final score lose modal content -->
-            <div class="modal-content">
-              <span id="final-score-lose-close">x</span>
-              <div id="final-score-message">
-                    <div class="sheldon-container">
-                        <img class="sheldon-image" src="assets/images/unhappy-sheldon.png" alt="unhappy sheldon">
-                    </div>
-                    <h4>Computer won this round, better luck on the next!</h4>
-                    <h4>You're welcome to try another round</h4>                    
-                    <p>To start a new game please press <em><strong>restart game</strong></em> on the main console</p>
-                </div>                
-            </div>
-        </div>
-        <h2>Make Your Choice</h2>
-        <div id="btn-options">
-            <button id="rock" class="btn pointer">Rock <i class="fa-regular fa-hand-back-fist"></i></button>
-            <button id="paper" class="btn pointer">Paper <i class="fa-regular fa-hand"></i></button>
-            <button id="scissors" class="btn pointer">Scissors <i class="fa-regular fa-hand-scissors"></i></button>
-            <button id="lizard" class="btn pointer">Lizard <i class="fa-regular fa-hand-lizard"></i></button>
-            <button id="spock" class="btn pointer">Spock <i class="fa-regular fa-hand-spock"></i></button>
-        </div>
-        <p id="message">
-                
-        </p>               
-        <div id="game-area">
-            <div id="user">
-                <p>Your Score: <span id="user-score">0</span></p>
-                <div class="images">
-                    <img src="assets/images/rpsls.png" alt="Rock-Paper-Scissors-Lizard-Spock" id="user-image">
+            <div id="rules-modal" class="modal">
+                <!-- rules modal content -->
+                <div class="modal-content">
+                <span id="btn-close">x</span>
+                <div id="modal-rules">                
+                        <h4><i class="fa-regular fa-hand-scissors"></i> Scissors <em><u>cuts</u></em> paper <i class="fa-regular fa-hand"></i></h4>
+                        <h4><i class="fa-regular fa-hand"></i> Paper <em><u>covers</u></em> rock<i class="fa-regular fa-hand-back-fist"></i></h4>
+                        <h4><i class="fa-regular fa-hand-back-fist"></i> rock <em><u>crushes</u></em> lizard <i class="fa-regular fa-hand-lizard"></i></h4>
+                        <h4><i class="fa-regular fa-hand-lizard"></i> lizard <em><u>poisons</u></em> spock <i class="fa-regular fa-hand-spock"></i></h4>
+                        <h4><i class="fa-regular fa-hand-spock"></i> spock <em><u>smashes</u></em> scissors <i class="fa-regular fa-hand-scissors"></i></h4>
+                        <h4><i class="fa-regular fa-hand-scissors"> </i>scissors <em><u>decapitates</u></em> lizard <i class="fa-regular fa-hand-lizard"></i></h4>
+                        <h4><i class="fa-regular fa-hand-lizard"></i> lizard <em><u>eats</u></em> paper <i class="fa-regular fa-hand"></i></h4>
+                        <h4><i class="fa-regular fa-hand"></i> paper <em><u>disproves</u></em> spock <i class="fa-regular fa-hand-spock"></i></h4>
+                        <h4><i class="fa-regular fa-hand-spock"></i> spock <em><u>vaporizes</u></em> rock <i class="fa-regular fa-hand-back-fist"></i></h4>
+                        <h4><i class="fa-regular fa-hand-back-fist"></i> rock <em><u>crushes</u></em> scissors <i class="fa-regular fa-hand-scissors"></i></h4>
+                        <p>The first one to score 10 wins. Good Luck! <i class="fa-solid fa-thumbs-up"></i></p>
+                        <p>Game Developed by Leonardo Simeone <a target="_blank" href="https://github.com/leonardo-simeone/Rock-Paper-Scissors-Lizard-Spock-Game" aria-label="link to GitHub repository">GitHub</a></p>
+                    </div>                
                 </div>
             </div>
-            <div id="computer">
-                <p>Computer Score: <span id="computer-score">0</span></p>
-                <div class="images">
-                    <img src="assets/images/rpsls.png" alt="Rock-Paper-Scissors-Lizard-Spock"  id="computer-image">
+        </section>
+        <section id="modal-mesagges">
+            <div id="final-score-win-modal" class="modal">
+                <!-- final score win modal content -->
+                <div class="modal-content">
+                <span id="final-score-win-close">x</span>
+                <div class="final-score-message">
+                        <div class="sheldon-container">
+                            <img class="sheldon-image" src="assets/images/happy-sheldon.png" alt="happy sheldon">
+                        </div>
+                        <h4>Congratulations, you have won this round! Well Done!</h4>
+                        <h4>You're welcome to try another round</h4>                    
+                        <p>To start a new game please press <em><strong>restart game</strong></em> on the main console</p>
+                    </div>                
                 </div>
             </div>
-        </div>
+            <div id="final-score-lose-modal" class="modal">
+                <!-- final score lose modal content -->
+                <div class="modal-content">
+                <span id="final-score-lose-close">x</span>
+                <div class="final-score-message">
+                        <div class="sheldon-container">
+                            <img class="sheldon-image" src="assets/images/unhappy-sheldon.png" alt="unhappy sheldon">
+                        </div>
+                        <h4>Computer won this round, better luck on the next!</h4>
+                        <h4>You're welcome to try another round</h4>                    
+                        <p>To start a new game please press <em><strong>restart game</strong></em> on the main console</p>
+                    </div>                
+                </div>
+            </div>
+        </section>
+        <section id="game-area-scope">
+            <h2>Make Your Choice</h2>
+            <div id="btn-options">
+                <button id="rock" class="btn pointer">Rock <i class="fa-regular fa-hand-back-fist"></i></button>
+                <button id="paper" class="btn pointer">Paper <i class="fa-regular fa-hand"></i></button>
+                <button id="scissors" class="btn pointer">Scissors <i class="fa-regular fa-hand-scissors"></i></button>
+                <button id="lizard" class="btn pointer">Lizard <i class="fa-regular fa-hand-lizard"></i></button>
+                <button id="spock" class="btn pointer">Spock <i class="fa-regular fa-hand-spock"></i></button>
+            </div>
+            <p id="message">
+                    
+            </p>               
+            <div id="game-area">
+                <div id="user">
+                    <p>Your Score: <span id="user-score">0</span></p>
+                    <div class="images">
+                        <img src="assets/images/rpsls.png" alt="Rock-Paper-Scissors-Lizard-Spock" id="user-image">
+                    </div>
+                </div>
+                <div id="computer">
+                    <p>Computer Score: <span id="computer-score">0</span></p>
+                    <div class="images">
+                        <img src="assets/images/rpsls.png" alt="Rock-Paper-Scissors-Lizard-Spock"  id="computer-image">
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
         <h3 class="pointer">Restart Game</h3>
