@@ -34,7 +34,7 @@ header h1 {
     padding: 0;
 }
 
-main > h2 {
+#game-area-scope > h2 {
     background: #FFEFCA;
     border-radius: 10px;
     width: 35%;
@@ -51,7 +51,13 @@ main > h2 {
     background: #F9F871; /* Generic Gradient */
     border-radius: 10px;    
     margin: 1% auto 0;
-    border: 1px solid #00001D;   
+    border: 1px solid #00001D;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+    font-size: 180%;
+    padding: 10px;
+    line-height: 80px;   
 }
 
 #game-rules button:hover {
@@ -258,18 +264,20 @@ footer h3:hover {
       padding: 5px;
     }
 
-    #game-rules button {
-      margin: 3% auto;
-      width: 60%;
-    }
-
-    main h2 {
+    #game-area-scope h2, #game-rules button {
       border-radius: 5px;
       width: 60%;
       margin: 3% auto;
       font-size: 1rem;
       line-height: 25px;   
     }
+
+    #game-rules button {            
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      line-height: 40px;
+    }    
 
     #game-area {
       flex-wrap: nowrap;
@@ -331,9 +339,8 @@ footer h3:hover {
       height: auto;     
     }
 
-    #game-rules h2 {      
-      line-height: 25px;
-      width: auto;
+    #game-rules button {
+      font-size: 1rem;
     }
 
     .btn {
@@ -375,11 +382,12 @@ footer h3:hover {
       font-size: .9rem;      
     }
 
-    #game-rules h2 {
-      font-size: .7rem;      
+    #game-rules button {
+      font-size: .7rem;
+      line-height: 25px;      
     }
     
-    main h2 {
+    #game-area-scope h2 {
       font-size: .7rem;
     }
 
