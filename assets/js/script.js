@@ -214,12 +214,16 @@ function endGame() {
 }
 
 function disableBtns() {
+    document.getElementById("btn-options").style.display = "none";
+    document.getElementById("cta").style.display = "none";
     buttons.forEach(button => {
         button.classList.add("btn-disabled");
     });
 }
 
 function enableBtns() {
+    document.getElementById("btn-options").style.display = "block";
+    document.getElementById("cta").style.display = "block";
     buttons.forEach(button => {
         button.classList.remove("btn-disabled");
     });
