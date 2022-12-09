@@ -6,6 +6,31 @@ In this particular version of the game, the user can choose one out of the five 
 
 ![Responsive Mock-up](documentation/am-i-responsive.png)
 
+## UX
+
+### Wireframing
+
+To wireframe the website I used [Whimsical](https://whimsical.com/wireframes). Even though initially I planned on including the game rules via an always visible image, that plan changed given that, when considering screen space as well as a accessibility, I realized that the best course of action was to include the game rules within a modal and in written format so that screen readers would be able to read it.
+
+![Wireframe](documentation/whimsical-muck-up.png)
+
+### Fonts and Colors Selection
+
+* __Fonts.__
+    
+    * I browsed [heyreliable](https://heyreliable.com/ultimate-google-font-pairings/) google fonts pairings available in their collection and selected number 20 based on the look and mood wanted for the game.
+    
+    ![Fonts](documentation/fonts-selected.png)
+
+    * The fonts are clear to read and have a friendly and inviting style. Nothing too serious since the user is there just to have a bit of fun and entertainment.
+
+* __Colors.__
+
+    * For the colors selection, I used the [ColorSpace](https://mycolor.space/) website which provides the option to input any color you want and then it will provide a selection of matching/compatible colors that relate well to that "base" color you selected in the first place.
+    * The base color I selected is [#00001D](https://mycolor.space/?hex=%2300001D&sub=1), all the related colors I used, I referenced them accordingly in the css style sheet.    
+
+    ![Colors](documentation/colors-selected.png)
+
 
 Welcome Leonardo Simeone,
 
