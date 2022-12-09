@@ -168,13 +168,13 @@ function getModal() {
     btn.addEventListener("click", modalClicked);
     function modalClicked() {
         modal.style.display = "block";
-    };
+    }
 
     // When the user clicks on <span> (x), close the modal
     btnClose.addEventListener("click", modalClosed);
     function modalClosed() {
         modal.style.display = "none";
-    };
+    }
 
     // When the user clicks anywhere outside of the modal, close it
     window.addEventListener("click", windowClicked);
@@ -182,7 +182,7 @@ function getModal() {
         if (event.target == modal) {
             modal.style.display = "none";
         }
-    };
+    }
 }
 
 /**
@@ -256,7 +256,7 @@ function finalScoreWinModal() {
     btnClose.addEventListener("click", modalClosed);
     function modalClosed() {
         finalModal.style.display = "none";
-    };
+    }
 
     // When the user clicks anywhere outside of the modal, close it
     window.addEventListener("click", windowClicked);
@@ -264,7 +264,7 @@ function finalScoreWinModal() {
         if (event.target == finalModal) {
             finalModal.style.display = "none";
         }
-    };
+    }
 }
 
 
@@ -281,7 +281,7 @@ function finalScoreLoseModal() {
     btnClose.addEventListener("click", modalClosed);
     function modalClosed() {
         finalModal.style.display = "none";
-    };
+    }
 
     // When the user clicks anywhere outside of the modal, close it
     window.addEventListener("click", windowClicked);
@@ -289,5 +289,5 @@ function finalScoreLoseModal() {
         if (event.target == finalModal) {
             finalModal.style.display = "none";
         }
-    };
+    }
 }
