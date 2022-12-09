@@ -1,4 +1,11 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Rock Paper Scissors Lizard Spock Game
+
+Rock Paper Scissors Lizard Spock game, is a JavaScript based online game that offers users an alternative to the world-known Rock Paper Scissors game. Created by internet pioneer Sam Kass, this game is an improvement of the classic game and adds an extra two choices to make a total of five. The game was popularized by Dr. Sheldon Cooper, a fictional character played by Jim Parsons from the acclaimed tv show The Big Bang Theory. Since the game was first introduced in the show it became quite popular amongst fans and general public.
+
+In this particular version of the game, the user can choose one out of the five options per game to play against the computer, the first one to score ten points wins the round. The game is easy to play and the rules are well explained. To access the games rules the user has to click on the "Game Rules" button available right before the game area. Once the round is finished then the selection buttons are disabled and the user is advised that in order to play another round, they must click/tap on the "Restart Game" button. A score indicator is provided for the user to be able to see in real time both scores.
+
+![Responsive Mock-up](documentation/am-i-responsive.png)
+
 
 Welcome Leonardo Simeone,
 
