@@ -201,7 +201,7 @@ footer h3:hover {
     pointer-events: none;
   }
 
-  #final-score-message h4 {
+  .final-score-message h4 {
     font-size: small;    
   }
 
