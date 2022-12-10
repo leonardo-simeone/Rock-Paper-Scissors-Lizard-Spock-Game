@@ -187,11 +187,30 @@ function getModal() {
 
 /**
  * indicates the user to select their choice from one of the options above,
- * it lets the user know via an "alert" that the game area images are not interactive
+ * it lets the user know via modal that the game area images are not interactive
  */
-function imgClicked() { 
+function chooseFromButtons() {    
 
-    alert ("Please select one of the options above!");
+    let modalWarning = document.getElementById("choose-from-button");
+
+    modalWarning.style.display = "block";
+
+    // Get the <span> element that closes the modal
+    let btnClose = document.getElementById("choose-from-btn-close");        
+
+    // When the user clicks on <span> (x), close the modal
+    btnClose.addEventListener("click", modalClosed);
+    function modalClosed() {
+        modalWarning.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.addEventListener("click", windowClicked);
+    function windowClicked(event) {
+        if (event.target == modalWarning) {
+            modalWarning.style.display = "none";
+        }
+    }
 }
 
 function endGame() {
