@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let images = document.querySelectorAll(".images");
     for (let image of images) {
-        image.addEventListener("click", imgClicked);
+        image.addEventListener("click", chooseFromButtons);
     }
 
     let reset = document.getElementsByTagName("h3")[0];
