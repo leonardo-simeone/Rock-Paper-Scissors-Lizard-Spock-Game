@@ -62,8 +62,7 @@ function btnClicked(e) {
     document.getElementById("user-image").src = `assets/images/${userChoice}.png`;
     document.getElementById("user-image").alt = `${userChoice} image`;
     document.getElementById('user-image').setAttribute('aria-label', `user selected ${userChoice}`);
-    
-    console.log(userChoice);
+
     runGame();
         
 }
@@ -103,8 +102,7 @@ function getComputerAnswer() {
     document.getElementById("computer-image").src = `assets/images/${computerChoice}.png`;
     document.getElementById("computer-image").alt = `${computerChoice} image`;
     document.getElementById('computer-image').setAttribute('aria-label', `computer selected ${computerChoice}`);
-
-    console.log(computerChoice);    
+    
 }
 
 /**
@@ -120,40 +118,34 @@ function runGame() {
     let userScore = parseInt(document.getElementById("user-score").innerText);
     let computerScore = parseInt(document.getElementById("computer-score").innerText);
 
-    if (userChoice === computerChoice) {
-        console.log("The game is a tie!");
+    if (userChoice === computerChoice) {        
         document.getElementById("message").innerText = "The game is a tie!";
 
     } else if (userChoice === "rock" && (computerChoice === "scissors" || computerChoice === "lizard")) {
-        document.getElementById("user-score").innerText = ++userScore;
-        console.log("You win!");
+        document.getElementById("user-score").innerText = ++userScore;        
         document.getElementById("message").innerText = "Congratulations! You win!";
 
     } else if (userChoice === "paper" && (computerChoice === "rock" || computerChoice === "spock")) {
-        document.getElementById("user-score").innerText = ++userScore;
-        console.log("You win!");
+        document.getElementById("user-score").innerText = ++userScore;        
         document.getElementById("message").innerText = "Congratulations! You win!";
 
     } else if (userChoice === "scissors" && (computerChoice === "paper" || computerChoice === "lizard")) {
-        document.getElementById("user-score").innerText = ++userScore;
-        console.log("You win!");
+        document.getElementById("user-score").innerText = ++userScore;        
         document.getElementById("message").innerText = "Congratulations! You win!";
 
     } else if (userChoice === "lizard" && (computerChoice === "paper" || computerChoice === "spock")) {
-        document.getElementById("user-score").innerText = ++userScore;
-        console.log("You win!");
+        document.getElementById("user-score").innerText = ++userScore;        
         document.getElementById("message").innerText = "Congratulations! You win!";
 
     } else if (userChoice === "spock" && (computerChoice === "rock" || computerChoice === "scissors")) {
-        document.getElementById("user-score").innerText = ++userScore;
-        console.log("You win!");
+        document.getElementById("user-score").innerText = ++userScore;        
         document.getElementById("message").innerText = "Congratulations! You win!";
 
     } else {
-        document.getElementById("computer-score").innerText = ++computerScore;
-        console.log("Sorry, computer wins!");
+        document.getElementById("computer-score").innerText = ++computerScore;        
         document.getElementById("message").innerText = "Computer wins! Better luck next time.";
-    }   
+    }
+       
     endGame();
 }
 
