@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=PT+Sans&display=swap');
 
+/* body styling */
+
 body {
     font-family: Nunito, sans-serif;
     color: #00001D; /* main color */
@@ -7,6 +9,8 @@ body {
     margin: 0 30px;
     background: rgba(0, 0, 29, 0.3); /* main color in rgba */
 }
+
+/* headings styling */
 
 h1, h2, h3, h4 {
     font-family: PT-Sans, sans-serif;
@@ -46,6 +50,8 @@ header h1 {
     text-align: center;    
 }
 
+/* rules button styling */
+
 #game-rules button {
     text-decoration: none;    
     background: #F9F871; /* Generic Gradient */
@@ -67,6 +73,8 @@ header h1 {
 .pointer {
     cursor: pointer;
 }
+
+/* game area styling */
 
 #game-area {
     display: flex;
@@ -136,6 +144,8 @@ header h1 {
     border-radius: 15px;
 }
 
+/* footer styling */
+
 footer h3 {
     background: #F9F871;
     border-radius: 10px;
@@ -147,6 +157,8 @@ footer h3 {
 footer h3:hover {
     background: #D16E5E;
 }
+
+/* modals styling */
 
 /* The Modal (background) */
 .modal {
