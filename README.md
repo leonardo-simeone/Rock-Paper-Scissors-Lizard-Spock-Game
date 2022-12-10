@@ -31,38 +31,418 @@ To wireframe the website I used [Whimsical](https://whimsical.com/wireframes). E
 
     ![Colors](documentation/colors-selected.png)
 
+## Features
 
-Welcome Leonardo Simeone,
+* __Game Name/Title__
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+    * The game title is included within the header as the first element in the html document to indicate the user (new or previous), that the site is a game and what the game is about. It is placed within good contrasting background which makes it easy to read.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+![Game Name](documentation/game-title.png)
 
-## Gitpod Reminders
+* __Game Rules Button__
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+    * The game rules button is very self explanatory, once the user clicks on it a modal opens, in this modal the game's general rules are explained as well as the round top score needed to win it.
 
-`python3 -m http.server`
+    ![Game Rules Button](documentation/game-rules-button.png)
 
-A blue button should appear to click: _Make Public_,
+    * At the end of the rules button modal I included developer credits, within an anchor element I also included the game's GitHub link which opens in a new tab.
+    * The button has visual cues to indicate the user that they're hovering over the button by changing color.
+    * To exit the rules modal, the user can either click on the X at the top right corner or click anywhere outside of the modal.
+    * The execution of this modal is possible thanks to JavaScript and the getModal() function. This function shows the modal when the function is called and allows for it to be closed by either clicking X or clicking anywhere outside of the modal.
 
-Another blue button should appear to click: _Open Browser_.
+    ```js
+    function getModal() {
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+        let modal = document.getElementById("rules-modal");
 
-A blue button should appear to click: _Make Public_,
+        // Get the button that opens the modal
+        let btn = document.getElementById("btn-rules");
 
-Another blue button should appear to click: _Open Browser_.
+        // Get the <span> element that closes the modal
+        let btnClose = document.getElementById("btn-close");
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+        // When the user clicks the button, open the modal 
+        btn.addEventListener("click", modalClicked);
+        function modalClicked() {
+            modal.style.display = "block";
+        }
 
-To log into the Heroku toolbelt CLI:
+        // When the user clicks on <span> (x), close the modal
+        btnClose.addEventListener("click", modalClosed);
+        function modalClosed() {
+            modal.style.display = "none";
+        }
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+        // When the user clicks anywhere outside of the modal, close it
+        window.addEventListener("click", windowClicked);
+        function windowClicked(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    }
+    ```
+
+![Game Rules](documentation/game-rules.png)
+
+* __Make Your Choice Heading__
+
+    * This heading is an invitation to the user to start playing the game. A call to action for the user to make their choice and start playing.
+
+![Call to Action](documentation/call-to-action.png)
+
+* __Choice Options Buttons__
+
+    * These buttons will allow the user to select their option from the options available to play against the computer.
+    * The button have visual cues that allow the user to know when they're hovering over one of them by changing color.
+
+    ![Options Buttons](documentation/options-buttons.png)
+
+    * Once clicked the button will send the command to JavaScript to run the necessary logic to play the game.
+    * When an option is selected, the image corresponding the selected option will appear in the user game area with its respective alt and aria-label attributes.
+
+    ![Options Buttons Logic](documentation/options-buttons-logic.png)
+
+    * Thanks to JavaScript and the document event listener at the start of the JS script, we're able to listen to user click and run the event handler function btnClicked() which assigns the user's choice variable, image, alt and aria-label attributes and calls the runGame() function. The run game function then gets the computer choice by running the getComputerAnswer function first and then compares the two choices (user's and computer's) to increment the corresponding score.
+
+    ```js
+    /* jshint esversion: 11 */
+
+    let userChoice = "";
+    let computerChoice = "";
+    let buttons = document.querySelectorAll(".btn");
+    /**
+    * Once the DOM is loaded it gets button elements as an array,
+    * "loops" through them and listens for user clicks
+    * then it assigns the right value and image to the userChoice variable
+    */
+    document.addEventListener("DOMContentLoaded", function () {
+        getModal();
+        buttons.forEach(button => { 
+            button.addEventListener("click", btnClicked);
+        });
+
+        let images = document.querySelectorAll(".images");
+        for (let image of images) {
+            image.addEventListener("click", chooseFromButtons);
+        }
+
+        let reset = document.getElementsByTagName("h3")[0];
+        reset.addEventListener("click", resetGame);
+
+    });
+
+    function btnClicked(e) {
+        let btn = e.target;    
+        if(btn.nodeName === "I") {
+            btn = btn.parentElement;
+        }
+
+        switch (btn) {
+            case document.getElementById("rock"):
+                userChoice = "rock";
+                break;
+            
+            case document.getElementById("paper"):
+                userChoice = "paper";
+                break;
+            
+            case document.getElementById("scissors"):
+                userChoice = "scissors";
+                break;
+                    
+            case document.getElementById("lizard"):
+                userChoice = "lizard";
+                break;
+        
+            case document.getElementById("spock"):
+                userChoice = "spock";
+                break;
+
+            default:
+                console.log("invalid choice");
+        }
+
+        document.getElementById("user-image").src = `assets/images/${userChoice}.png`;
+        document.getElementById("user-image").alt = `${userChoice} image`;
+        document.getElementById('user-image').setAttribute('aria-label', `user selected ${userChoice}`);
+                    
+        runGame();
+            
+    }
+    ``` 
+
+* __Result Message__
+
+    * This feature shows only when the user has started the game and shows a message indicating the result of the game congratulating them should they win or indicating that the computer has won.
+
+    ![Message](documentation/message.png)
+
+    * This functionality is embedded in the runGame() function, which based on the user's and computer's choices comparison result, it will assign and show a corresponding message to the user. This message is fully deleted once the game is reset.
+
+    ```js
+    function runGame() {
+
+        getComputerAnswer();
+
+        let userScore = parseInt(document.getElementById("user-score").innerText);
+        let computerScore = parseInt(document.getElementById("computer-score").innerText);
+
+        if (userChoice === computerChoice) {            
+            document.getElementById("message").innerText = "The game is a tie!";
+
+        } else if (userChoice === "rock" && (computerChoice === "scissors" || computerChoice === "lizard")) {
+            document.getElementById("user-score").innerText = ++userScore;            
+            document.getElementById("message").innerText = "Congratulations! You win!";
+        }
+
+        ...
+    }
+
+    ``` 
+
+* __Scoreboards__
+
+    * The score boards are designed to show the user the current round score in real time, each game won will add a point to the winner's score.
+    * The score is updated via a functionality embedded in the runGame() function as shown in the code snippet above.
+    * Scoreboards are clearly identifiable thanks to their corresponding locations and colors.
+
+    ![Scoreboards](documentation/scoreboards.png)
+
+* __User and Computer Game Areas__
+
+    * Initially, the game areas both contain the same image, in this image the five pictures of the five options are shown.
+
+    ![Game Areas](documentation/user-computer-game-area.png)
+    
+    * Once the user selects one of the options by clicking one of the buttons the game starts and the corresponding image to the user selection will be shown in their area, the same will occur for the computer area. All the images will have their corresponding alt and aria-label attributes making it easier for screen readers to read which options have been selected by the parties in play as shown in the code snippet below for the computer choice case.
+
+    ```js
+        function getComputerAnswer() {
+            computerChoice = Math.floor(Math.random() * 5);
+
+            switch (computerChoice) {
+                case 0:
+                    computerChoice = "rock";
+                    break;
+                
+                case 1:
+                    computerChoice = "paper";
+                    break;
+                
+                case 2:
+                    computerChoice = "scissors";
+                    break;
+                        
+                case 3:
+                    computerChoice = "lizard";
+                    break;
+            
+                case 4:
+                    computerChoice = "spock";
+                    break;
+
+                default:
+                    console.log("invalid choice");
+            }
+
+            document.getElementById("computer-image").src = `assets/images/${computerChoice}.png`;
+            document.getElementById("computer-image").alt = `${computerChoice} image`;
+            document.getElementById('computer-image').setAttribute('aria-label', `computer selected ${computerChoice}`);
+                
+        }
+
+    ``` 
+
+    * In case the user gets confused and decides to click on the initial (game-area) image, a modal message has been added that indicates the user that they need to select an option from the options available above in the case of said images being clicked. This is possible thanks to the event listener when the DOM is loaded and the chooseFromButtons function as shown below. Also a gentle reminder for the user was included in this modal, click on restart game to play again once the round is over.
+
+    ```js
+        document.addEventListener("DOMContentLoaded", function () {
+            getModal();
+            buttons.forEach(button => { 
+                button.addEventListener("click", btnClicked);
+            });
+
+            let images = document.querySelectorAll(".images");
+            for (let image of images) {
+                image.addEventListener("click", chooseFromButtons);
+            }
+
+            let reset = document.getElementsByTagName("h3")[0];
+            reset.addEventListener("click", resetGame);
+
+        });
+
+        /**
+        * indicates the user to select their choice from one of the options above,
+        * it lets the user know via modal that the game area images are not interactive
+        */
+        function chooseFromButtons() {    
+
+            let modalWarning = document.getElementById("choose-from-button");
+
+            modalWarning.style.display = "block";
+
+            // Get the <span> element that closes the modal
+            let btnClose = document.getElementById("choose-from-btn-close");        
+
+            // When the user clicks on <span> (x), close the modal
+            btnClose.addEventListener("click", modalClosed);
+            function modalClosed() {
+                modalWarning.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.addEventListener("click", windowClicked);
+            function windowClicked(event) {
+                if (event.target == modalWarning) {
+                    modalWarning.style.display = "none";
+                }
+            }
+        }
+    ```
+
+    ![Click Image Message](documentation/img-clicked-modal.png)
+
+* __Restart Game__
+
+    * The Restart Game clickable heading was designed to give the user the option to reset the game before the round is over and to allow the user to reset the game once the round is over.
+
+    ![Reset](documentation/restart-game.png) 
+
+    * An event listener was used to listen to user's click (please see previous code snippet) and a call to the resetGame() function when said event happens (please see previous code snippet).
+
+    ```js
+        function resetGame() {
+            enableBtns();            
+            document.getElementById("user-image").src = "assets/images/rpsls.png";
+            document.getElementById("user-image").alt = "Rock-Paper-Scissors-Lizard-Spock";
+            document.getElementById("computer-image").src = "assets/images/rpsls.png";
+            document.getElementById("computer-image").alt = "Rock-Paper-Scissors-Lizard-Spock";
+
+            document.getElementById("user-score").innerText = 0;
+            document.getElementById("computer-score").innerText = 0;
+
+            document.getElementById("message").innerText = "";
+        }
+
+    ```
+
+    * Once the function is called the options buttons will be re enabled given they're disabled when either score reaches ten points, also user and computer area images will be set back to the initial images, the scores will be set back to zero, and the game result message will dissapear.
+
+    * The Endgame() function, is the one responsible for trigerring the disableBtns() function which disables the buttons so that the user can't keep playing until the game is restarted. This function runs at the end of the runGame() function, this way, it's able to monitor the scores and execute its logic when needed.
+
+    ```js
+        function endGame() {    
+            let finalUserScore = parseInt(document.getElementById("user-score").innerText);
+            let finalComputerScore = parseInt(document.getElementById("computer-score").innerText);
+
+            if(finalUserScore === 10 && finalComputerScore < 10) {
+                document.getElementById("message").innerText = "Well Done! You Have Won this round!";
+                disableBtns();
+                finalScoreWinModal();        
+                
+            } else if (finalComputerScore === 10 && finalUserScore < 10) {
+                document.getElementById("message").innerText = "Computer won this round";        
+                disableBtns();
+                finalScoreLoseModal();        
+                
+            } else {
+                console.log("continue playing");
+            }
+        }
+
+    ```
+
+    * The disabling and enabling of the options buttons is achieved thanks to adding and removing a CSS class in the buttons elements in HTML.
+
+    ```js
+        function disableBtns() {
+            buttons.forEach(button => {
+                button.classList.add("btn-disabled");
+            });
+        }
+
+        function enableBtns() {
+            buttons.forEach(button => {
+                button.classList.remove("btn-disabled");
+            });
+        }
+
+    ```
+
+    ```css
+        .btn-disabled {
+            pointer-events: none;
+        }
+    ```
+
+    * Also the options buttons will dissapear in case the user does not read the instructions in the win or lose modals indicating to restart the game to play again. This way the user has no other choice than to click the rules button or the restart game heading.
+
+* __End Game Win and Lose Modals__
+
+    * Once the 10 points mark is reached by either party, a modal is trigerred which delivers a message depending on who the winner was. This message will explicitly indicate the user that the round is over and should they want to keep playing, they need to restart the game.
+    * The finalScoreWinModal() function or the finalScoreLoseModal() function will be called in the endGame() function, depending on the round's result, showing then the corresponding HTML modal div.
+
+    ```js
+        
+    function finalScoreWinModal() {    
+
+        let finalModal = document.getElementById("final-score-win-modal");
+
+        finalModal.style.display = "block";
+
+        // Get the <span> element that closes the modal
+        let btnClose = document.getElementById("final-score-win-close");        
+
+        // When the user clicks on <span> (x), close the modal
+        btnClose.addEventListener("click", modalClosed);
+        function modalClosed() {
+            finalModal.style.display = "none";
+        };
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.addEventListener("click", windowClicked);
+        function windowClicked(event) {
+            if (event.target == finalModal) {
+                finalModal.style.display = "none";
+            }
+        };
+    }
+
+    ```
+
+    ![Win Modal](documentation/winning-round-modal.png) 
+
+    ```js
+
+    function finalScoreLoseModal() {    
+
+        let finalModal = document.getElementById("final-score-lose-modal");
+
+        finalModal.style.display = "block";
+
+        // Get the <span> element that closes the modal
+        let btnClose = document.getElementById("final-score-lose-close");        
+
+        // When the user clicks on <span> (x), close the modal
+        btnClose.addEventListener("click", modalClosed);
+        function modalClosed() {
+            finalModal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.addEventListener("click", windowClicked);
+        function windowClicked(event) {
+            if (event.target == finalModal) {
+                finalModal.style.display = "none";
+            }
+        }
+    }
+
+    ```
+
+    ![Lose Modal](documentation/losing-round-modal.png)
 
 You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
 
