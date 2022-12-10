@@ -103,7 +103,7 @@ To wireframe the website I used [Whimsical](https://whimsical.com/wireframes). E
 
     ![Options Buttons Logic](documentation/options-buttons-logic.png)
 
-    * Thanks to JavaScript and the document event listener at the start of the JS script, we're able to listen to user click and run the event handler function btnClicked() which assigns the user's choice variable, image, alt and aria-label attributes and calls the runGame() function. The run game function then gets the computer choice by running the getComputerAnswer function first and then compares the two choices (user's and computer's) to increment the corresponding score.
+    * Thanks to JavaScript and the document event listener at the start of the JS script, we're able to listen to user click and run the event handler function btnClicked() which assigns the user's choice variable, image, alt and aria-label attributes and calls the runGame() function. The run game function then gets the computer choice by running the getComputerAnswer() function first and then compares the two choices (user's and computer's) to increment the corresponding score.
 
     ```js
     /* jshint esversion: 11 */
@@ -254,7 +254,7 @@ To wireframe the website I used [Whimsical](https://whimsical.com/wireframes). E
 
     ``` 
 
-    * In case the user gets confused and decides to click on the initial (game-area) image, a modal message has been added that indicates the user that they need to select an option from the options available above in the case of said images being clicked. This is possible thanks to the event listener when the DOM is loaded and the chooseFromButtons function as shown below. Also a gentle reminder for the user was included in this modal, click on restart game to play again once the round is over.
+    * In case the user gets confused and decides to click on the initial (game-area) image, a modal message has been added that indicates the user that they need to select an option from the options available above in the case of said images being clicked. This is possible thanks to the event listener when the DOM is loaded and the chooseFromButtons() function as shown below. Also a gentle reminder for the user was included in this modal, click on restart game to play again once the round is over.
 
     ```js
         document.addEventListener("DOMContentLoaded", function () {
@@ -354,16 +354,20 @@ To wireframe the website I used [Whimsical](https://whimsical.com/wireframes). E
 
     ```
 
-    * The disabling and enabling of the options buttons is achieved thanks to adding and removing a CSS class in the buttons elements in HTML.
+    * The disabling and enabling of the options buttons and call to action heading, is achieved thanks to adding and removing a CSS class in the buttons elements in HTML, as well as the display style change in the elements to make them dissapear, managing to further reinforce the need to restart the game once the round is over. This way the user has no other choice but to click the rules button or the restart game heading.
 
     ```js
         function disableBtns() {
+            document.getElementById("btn-options").style.display = "none";
+            document.getElementById("cta").style.display = "none";
             buttons.forEach(button => {
                 button.classList.add("btn-disabled");
             });
         }
 
         function enableBtns() {
+            document.getElementById("btn-options").style.display = "block";
+            document.getElementById("cta").style.display = "block";
             buttons.forEach(button => {
                 button.classList.remove("btn-disabled");
             });
@@ -377,8 +381,8 @@ To wireframe the website I used [Whimsical](https://whimsical.com/wireframes). E
         }
     ```
 
-    * Also the options buttons will dissapear in case the user does not read the instructions in the win or lose modals indicating to restart the game to play again. This way the user has no other choice than to click the rules button or the restart game heading.
-
+    ![Restart Game Enforcement](documentation/restart-game-enforcement.png) 
+    
 * __End Game Win and Lose Modals__
 
     * Once the 10 points mark is reached by either party, a modal is trigerred which delivers a message depending on who the winner was. This message will explicitly indicate the user that the round is over and should they want to keep playing, they need to restart the game.
@@ -454,7 +458,7 @@ To wireframe the website I used [Whimsical](https://whimsical.com/wireframes). E
 * [GitHub](https://github.com/): It was used as a secure cloud-based files storage for my code and repositories in general. Also as a deployment platform via GitHub Pages.
 * [Gitpod](https://www.gitpod.io/): It was used as a cloud-based IDE to develope the site.
 * [Whimsical](https://whimsical.com/wireframes): It was used to wireframe the initial idea/mock-up of the project.
-* [Adobe Photoshop](https://www.adobe.com/ie/products/photoshop.html): It was used to resize images as well as framing several images together into one.
+* [Adobe Photoshop](https://www.adobe.com/ie/products/photoshop.html): It was used to resize, cut and color images as well as framing several images together into one.
 
 ## Release History
 
