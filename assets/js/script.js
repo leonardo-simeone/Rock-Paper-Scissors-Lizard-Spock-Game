@@ -24,6 +24,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+/**
+ * this function executes the logic to assign the userChoice variable a value based on the button the user clicked,
+ * also forces the icons to be seen as part of the button they're in in case they're clicked
+ */
 function btnClicked(e) {
     let btn = e.target;    
     if(btn.nodeName === "I") {
@@ -213,6 +217,11 @@ function chooseFromButtons() {
     }
 }
 
+/**
+ * this function monitors both scores the user's and the computer's, once either score
+ * has reached ten points, it executes the logic to stop the game and let the user
+ * know that the round is over and that to play again they need to restart game
+ */
 function endGame() {
     let finalUserScore = parseInt(document.getElementById("user-score").innerText);
     let finalComputerScore = parseInt(document.getElementById("computer-score").innerText);
@@ -232,6 +241,9 @@ function endGame() {
     }
 }
 
+/**
+ * it disables and hides the options buttons and the call to action (make your choice) heading
+ */
 function disableBtns() {
     document.getElementById("btn-options").style.display = "none";
     document.getElementById("cta").style.display = "none";
@@ -240,6 +252,9 @@ function disableBtns() {
     });
 }
 
+/**
+ * it enables and shows the options buttons and the call to action (make your choice) heading
+ */
 function enableBtns() {
     document.getElementById("btn-options").style.display = "block";
     document.getElementById("cta").style.display = "block";
@@ -248,6 +263,10 @@ function enableBtns() {
     });
 }
 
+/**
+ * this function executes the logic to reset the game. it sets the scores back to zero,
+ * it sets the game area images back to the initial one and it deletes the game result message
+ */
 function resetGame() {
     enableBtns();
     document.getElementById("user-image").src = "assets/images/rpsls.png";
@@ -261,7 +280,9 @@ function resetGame() {
     document.getElementById("message").innerText = "";
 }
 
-
+/**
+ * this function triggers a modal message that indicates the user they have won
+ */
 function finalScoreWinModal() {    
 
     let finalModal = document.getElementById("final-score-win-modal");
@@ -286,7 +307,9 @@ function finalScoreWinModal() {
     }
 }
 
-
+/**
+ * this function triggers a modal message that indicates the user the computer has won
+ */
 function finalScoreLoseModal() {    
 
     let finalModal = document.getElementById("final-score-lose-modal");
