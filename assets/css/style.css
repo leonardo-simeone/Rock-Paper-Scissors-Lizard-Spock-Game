@@ -233,6 +233,24 @@ footer h3:hover {
     cursor: pointer;
   }
 
+  #choose-from-btn-close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  #choose-from-btn-close:hover,
+  #choose-from-btn-close:focus {
+    color: #00001D;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  #warning {
+    background-color: #5CECC0; /* Skip Gradient */    
+  }
+
   .sheldon-container {
     text-align: center;    
   }
