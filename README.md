@@ -578,7 +578,29 @@ if(btn.nodeName === "I") {
 
 ![Lighthouse Desktop Test](documentation/lighthouse-desktop-test.png)
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+## Deployment
+
+* I deployed the website using GitHub pages. The steps to do so, were the following:
+    * In the GitHub repository project menu, click on the cog wheel marked as Settings.
+    * Once in settings, on the left-hand side of the screen click on the Pages tab.
+    * In the Pages tab select "Deploy from a branch" in the drop-down menu from "Source".
+    * Right under the Source dropdown menu there is the "Branch" menu, from it select "Main" and "/(root)".
+    * Click on save and refresh the page after a few minutes to give GitHub time to process the deployment.
+    * At the top you will see the generated link to "Visit site" already deployed.
+
+    ![Deployment](documentation/deployment.png)
+    
+    * The link to visit the deployed website: [Rock Paper Scissors Lizard Spock Game](https://leonardo-simeone.github.io/Rock-Paper-Scissors-Lizard-Spock-Game/index.html)
+
+### Local Deployment
+
+In order to make a local copy of this project, you can clone it. In your IDE Terminal, type the following command to clone my repository:
+
+* `git clone https://github.com/leonardo-simeone/Rock-Paper-Scissors-Lizard-Spock-Game.git`
+
+Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/leonardo-simeone/Rock-Paper-Scissors-Lizard-Spock-Game)
 
 ---
 
