@@ -607,9 +607,9 @@ Alternatively, if using Gitpod, you can click below to create your own workspace
 __Content__
 
 * The knowledge applied in the use of flexbox, I learned from [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox). By using flexbox I was able to position elements in my layout a lot easier than with float.
-* The original code to create modals I took from [w3schools.com](https://www.w3schools.com/howto/howto_css_modals.asp) which I modified later to meet my needs.
-* The icons I used in the buttons and the modals I took from [Fontawesome](https://fontawesome.com/search?q=game&o=r&m=free).
-* The inspiration for the game I took from The Big Bang Theory show [The Big Bang Theory tv show](https://www.youtube.com/watch?v=_PUEoDYpUyQ&t=25s).
+* The original code to create modals, I took from [w3schools.com](https://www.w3schools.com/howto/howto_css_modals.asp) which I modified later to meet my needs.
+* The icons I used in the buttons and the modals, I took from [Fontawesome](https://fontawesome.com/search?q=game&o=r&m=free).
+* The inspiration for the game, I took from [The Big Bang Theory tv show](https://www.youtube.com/watch?v=_PUEoDYpUyQ&t=25s).
 * I used several Slack channels to find out information on different topics. 
 
 __Media__
