@@ -460,70 +460,123 @@ To wireframe the website I used [Whimsical](https://whimsical.com/wireframes). E
 * [Whimsical](https://whimsical.com/wireframes): It was used to wireframe the initial idea/mock-up of the project.
 * [Adobe Photoshop](https://www.adobe.com/ie/products/photoshop.html): It was used to resize, cut and color images as well as framing several images together into one.
 
-## Release History
+## Testing
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### Responsiveness
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+* I manually tested responsiveness with the help of devtools in Chrome, I checked multiple times that the game responds well regardless of the size and that no element is broken by size change. I tested respponsiveness starting at 320px wide to 1470px wide and beyond. All features look OK including, headings, images, buttons and modals.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+![DevTools Test](documentation/responsiveness-test-dev-tools.png)
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+* Also the [Am I Responsive](https://ui.dev/amiresponsive?url=https://leonardo-simeone.github.io/Rock-Paper-Scissors-Lizard-Spock-Game/) website was used to test responsiveness.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+![Am I Responsive Test](documentation/am-i-responsive.png)
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+### Functionality
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+* I tested that all the functionality in the game works as intended. By making use of the console.log() function (which I removed previous to project submission), I managed to follow the code during execution, allowing me to debug if needed and to confirm that the functions were doing what they were built to do.
+* The buttons were inputting the correct user choice, the getComputerAnswer() function was working as intended, the game result message was being printed correctly and the end game modal was triggering as it should.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+![Functionality Test](documentation/functionality.png)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+* I also made sure that when the user clicks on the user game area image as well as the computer game area image, the alert modal message is displayed.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+![Functionality Test Alert Message](documentation/functionality-alert-message.png)
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+### Browsers Compatibility
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+* I tested compatibility and functionality across different browsers. I used Chrome, Edge and Firefox, and in every single one of them the game works and responds well.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+![Browsers Test](documentation/browsers-test.png)
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### Bugs
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+* The first issue I encountered was the excessive space the rules image was occupying, to resolve this issue I researched online and I found a tool that allowed me to put the rules in without taking no space on the main screen, a modal. I found the modal and how to use it in [w3schools.com.com](https://www.w3schools.com/howto/howto_css_modals.asp). Once I understood how it works, I took this modal example and adapted it to my needs. I also used the modal to prompt the user with an end game message.
 
-------
+    ```js
 
-## FAQ about the uptime script
+    function getModal() {
 
-**Why have you added this script?**
+        let modal = document.getElementById("rules-modal");
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+        // Get the button that opens the modal
+        let btn = document.getElementById("btn-rules");
 
-**How will this affect me?**
+        // Get the <span> element that closes the modal
+        let btnClose = document.getElementById("btn-close");
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+        // When the user clicks the button, open the modal 
+        btn.addEventListener("click", modalClicked);
+        function modalClicked() {
+            modal.style.display = "block";
+        }
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+        // When the user clicks on <span> (x), close the modal
+        btnClose.addEventListener("click", modalClosed);
+        function modalClosed() {
+            modal.style.display = "none";
+        }
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+        // When the user clicks anywhere outside of the modal, close it
+        window.addEventListener("click", windowClicked);
+        function windowClicked(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    }
 
-**So….?**
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+    ```
 
-**Can I opt out?**
+* Another issue I found was during HTML document check. The checker indicated that I had a h2 (heading) inside a button and that is not allowed, also that I had a duplicate id which is also not allowed. To resolve the errors I removed the h2 (heading) inside the button and made the text bold to compensate for the font weight. As regards of the duplicate id, I changed the ids for classes and adjusted accordingly in CSS.
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+![Html Error](documentation/html-checker-error.png)
 
+```css
+.final-score-message h4 {
+    font-size: small;    
+}
 ```
-pkill uptime.sh
-rm .vscode/uptime.sh
+
+* During JavaScript document check, I found that the checker was indicating that the variables I declared as well as the arrow functions used were from ES6 version, basically they're a from a new version of JS and the checker was having trouble recognizing them. With the help of my mentor, I added the "js hint" comment that allowed the checker to recognize the new version syntax used.
+
+![JS Error](documentation/js-checker-error.png)
+
+* The last error I found was that when the buttons were clicked, sometimes they worked OK (selected the correct option) and sometimes they didn't, instead of selecting the correct option, they just selected spock regardless of the button pressed. Once more with the help of my mentor we found out that the problem was that when an icon (inside the button) was pressed, it would automatically go to the spock option as it was reading the icon as a different element from the button altogether. To resolve the issue I forced the function to read the icons as if they were the button they are in.
+
+![Icon Error](documentation/icon-button-error.png)
+
+```js
+let btn = e.target;    
+if(btn.nodeName === "I") {
+        btn = btn.parentElement;
+}
 ```
 
-**Anything more?**
+### HTML, CSS, JavaScript and Accessibility Validators Testing
+
+* I used the [official W3C Markup Validation Service](https://validator.w3.org/#validate_by_input) on the html file and no errors were found.
+
+![Html Checker](documentation/html-checker.png)
+
+* I used the [official W3C Jigsaw validator](https://jigsaw.w3.org/css-validator/#validate_by_input) on the css file and no issues were found.
+
+![Css Checker](documentation/css-checker.png)
+
+* I ran the JavaScript file through the [official JShint validator](https://jshint.com/) and no errors were found.
+
+![Js Checker](documentation/js-checker.png)
+
+* I used the lighthouse tool in devtools for mobile and desktop to test color contrast and accessibility and they were marked 100%.
+
+#### Mobile:
+
+![Lighthouse Mobile Test](documentation/lighthouse-mobile-test.png)
+
+#### Desktop:
+
+![Lighthouse Desktop Test](documentation/lighthouse-desktop-test.png)
 
 Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
 
