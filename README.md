@@ -602,6 +602,21 @@ Alternatively, if using Gitpod, you can click below to create your own workspace
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/leonardo-simeone/Rock-Paper-Scissors-Lizard-Spock-Game)
 
----
+## Credits
 
-Happy coding!
+__Content__
+
+* The knowledge applied in the use of flexbox, I learned from [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox). By using flexbox I was able to position elements in my layout a lot easier than with float.
+* The original code to create modals I took from [w3schools.com](https://www.w3schools.com/howto/howto_css_modals.asp) which I modified later to meet my needs.
+* The icons I used in the buttons and the modals I took from [Fontawesome](https://fontawesome.com/search?q=game&o=r&m=free).
+* The inspiration for the game I took from The Big Bang Theory show [The Big Bang Theory tv show](https://www.youtube.com/watch?v=_PUEoDYpUyQ&t=25s).
+* I used several Slack channels to find out information on different topics. 
+
+__Media__
+
+* To wireframe the project, I used [Whimsical](https://whimsical.com/wireframes).
+* To choose fonts pairing, I used [Heyreliable](https://heyreliable.com/ultimate-google-font-pairings/).
+* To choose the colors for the site, I used [ColorSpace](https://mycolor.space/?hex=00001D&sub=1).
+* The image I used as the main game area image, I took from [veerasundar.com](https://veerasundar.com/rock-paper-scissor-lizard-spoc/).
+* The individual images I used for each one of the options, I took from [this repository](https://repository-images.githubusercontent.com/194540172/75fd1300-9b66-11e9-8569-0768e6667775). I cut and colored each image.
+* I used [Adobe Photoshop](https://www.adobe.com/ie/products/photoshop.html) to resize, cut, color and group images.
