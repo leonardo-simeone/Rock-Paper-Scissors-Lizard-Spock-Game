@@ -3,6 +3,7 @@
 let userChoice = "";
 let computerChoice = "";
 let buttons = document.querySelectorAll(".btn");
+let moveCounter = 0;
 /**
  * Once the DOM is loaded it gets button elements as an array,
  * "loops" through them and listens for user clicks
@@ -229,7 +230,7 @@ function endGame() {
         finalScoreLoseModal();        
         
     } else {
-        console.log("continue playing");
+        moveCounter++;
     }
 }
 
